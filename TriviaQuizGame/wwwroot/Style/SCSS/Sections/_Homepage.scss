@@ -1,0 +1,206 @@
+﻿
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: 60% center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+//RESPONSIVE_____________________________________
+@media only screen and (max-width: 1200px) {
+    .background-image {
+        min-width: 120%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .background-image {
+        min-width: 140%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .background-image {
+        min-width: 160%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .background-image {
+        min-width: 180%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .background-image {
+        min-width: 200%;
+    }
+}
+
+
+// Styling för knappar-------------------------
+.HPbutton-container {
+    position: absolute;
+    top: 70vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    width: 7em;
+    height: 3em;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #683FEA;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 10px 0;
+    font-size: 2em;
+}
+
+.btn i {
+    transition: all 800ms ease;
+}
+
+.text {
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: large;
+}
+
+.btn:hover {
+    background: linear-gradient(0deg, #A47CF3, #683FEA);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.6), inset 0px -4px 0px 0px rgba(0, 0, 0, 0.4), 0px 0px 0px 4px rgba(255, 255, 255, 0.4), 0px 0px 180px 0px #9917FF;
+    transform: translateY(-2px);
+}
+
+.btn:hover .text {
+    color: white;
+}
+
+.btn:hover i {
+    color: #f3f3f3; 
+    transform: scale(1.2); 
+}
+
+// Responsiva stilar för knappen
+@media only screen and (max-width: 1200px) {
+    .btn {
+        width: 7em;
+        height: 3em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .btn {
+        width: 7em;
+        height: 3em;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .btn {
+        width: 7em;
+        height: 3em;
+    }
+}
+
+/* Light effect */
+#light-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.light {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,141,161,0.8) 0%, rgba(255,238,140,0.7) 100%);
+    animation: moveLight 8s infinite;
+    opacity: 0.6;
+}
+
+@keyframes moveLight {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(100%, 100%);
+    }
+
+    50% {
+        transform: translate(200%, 0);
+    }
+
+    75% {
+        transform: translate(100%, -100%);
+    }
+}
+
+/* Particles */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(179,235,242, 0.75);
+    border-radius: 50%;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Ensure content is above effects */
+.content-container {
+    position: relative;
+    z-index: 3;
+}

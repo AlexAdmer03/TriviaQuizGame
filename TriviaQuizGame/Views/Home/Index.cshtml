@@ -1,0 +1,42 @@
+﻿
+<div class="background-container">
+    <img src="/img/HP-Background.png" class="background-image" alt="Background Image">
+</div>
+
+<div class="content-container">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <!-- Inloggad användare -->
+        <div class="HPbutton-container">
+            <a href="/Game/Start" class="btn">
+                <i class="fa-solid fa-play"></i>
+                <span class="text">Starta Spel</span>
+            </a>
+            <a href="/Game/Leaderboard" class="btn">
+                <i class="fa-solid fa-trophy"></i>
+                <span class="text">Leaderboard</span>
+            </a>
+        </div>
+    }
+    else
+    {
+        <!-- Ej inloggad användare -->
+        <div class="HPbutton-container">
+            <a href="/Game/Leaderboard" class="btn">
+                <i class="fa-solid fa-trophy"></i>
+                <span class="text">Leaderboard</span>
+            </a>
+            <a href="/Account/Login" class="btn">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span class="text">Logga In</span>
+            </a>
+            <a href="/Account/Register" class="btn">
+                <i class="fa-solid fa-user-plus"></i>
+                <span class="text">Skapa Konto</span>
+            </a>
+        </div>
+    }
+</div>
+
+<div id="light-effect"></div>
+<div id="particles"></div>
